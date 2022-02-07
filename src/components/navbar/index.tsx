@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Link from 'next/link';
+import { Avatar } from "@nextui-org/react";
 
 
 export const Navbar = ()=> {
@@ -15,12 +16,10 @@ export const Navbar = ()=> {
 
     return(
         <>
-            <nav className='flex items-center flex-wrap shadow-xl p-3 '>
-                <Link href='/'>
-                   Akalanka Nayanajith
-                </Link>
+            <nav className='flex items-center flex-wrap shadow-sm p-3 '>
+                <Avatar size="lg" src="./assets/profile.jpg" color="primary" bordered />
                 <button
-                    className=' inline-flex p-3 hover:bg-green-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
+                    className=' inline-flex p-3 hover:bg-green-600 rounded lg:hidden ml-auto hover:text-white outline-none'
                     onClick={handleClick}
                 >
                     <svg
@@ -52,17 +51,12 @@ export const Navbar = ()=> {
                         </Link>
                         <Link href='/'>
                             <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
-                                Services
+                                Blog
                             </a>
                         </Link>
                         <Link href='/'>
                             <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
-                                About us
-                            </a>
-                        </Link>
-                        <Link href='/'>
-                            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
-                                Contact us
+                                About
                             </a>
                         </Link>
                     </div>
