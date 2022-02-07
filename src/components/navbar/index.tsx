@@ -1,6 +1,8 @@
+import React from 'react';
 import {useState} from "react";
 import Link from 'next/link';
 import { Avatar } from "@nextui-org/react";
+import styles from './Navbar.module.css';
 
 
 export const Navbar = ()=> {
@@ -16,10 +18,13 @@ export const Navbar = ()=> {
 
     return(
         <>
-            <nav className='flex items-center flex-wrap shadow-sm p-3 '>
+            <nav className='container mx-auto flex items-center flex-wrap p-3 '>
                 <Avatar size="lg" src="./assets/profile.jpg" color="primary" bordered />
+                <span className='text-lg font-bold ml-4'>
+                    Akalanka Nayanajith
+                </span>
                 <button
-                    className=' inline-flex p-3 hover:bg-green-600 rounded lg:hidden ml-auto hover:text-white outline-none'
+                    className=' inline-flex p-3 hover:bg-blue-900 rounded lg:hidden ml-auto hover:text-white outline-none'
                     onClick={handleClick}
                 >
                     <svg
@@ -41,21 +46,21 @@ export const Navbar = ()=> {
                 <div
                     className={`${
                         active ? '' : 'hidden'
-                    }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+                    }   w-full mt-2 lg:inline-flex lg:flex-grow lg:w-auto lg:mt-0`}
                 >
                     <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
                         <Link href='/'>
-                            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white '>
+                            <a className={styles.navItem}>
                                 Home
                             </a>
                         </Link>
                         <Link href='/'>
-                            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
+                            <a className={styles.navItem}>
                                 Blog
                             </a>
                         </Link>
                         <Link href='/'>
-                            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
+                            <a className={styles.navItem}>
                                 About
                             </a>
                         </Link>
